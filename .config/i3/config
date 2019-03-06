@@ -1,16 +1,4 @@
 # vim: filetype=i3
-#  _        _    ____  ____ ____
-# | |      / \  |  _ \| __ ) ___|
-# | |     / _ \ | |_) |  _ \___ \
-# | |___ / ___ \|  _ <| |_) |__) |
-# |_____/_/   \_\_| \_\____/____/
-#
-# File originally by Luke Smith
-# Website: http://lukesmith.xyz
-# Email: luke@lukesmith.xyz
-# YouTube: https://youtube.com/c/LukeSmithxyz
-# Github: https://github.com/LukeSmithxyz
-
 # This config file will use environmental variables such as $BROWSER and $TERMINAL.
 # You can set these variables in ~/.profile or ~/.bash_profile if you have it as below:
 #
@@ -51,7 +39,7 @@ exec --no-startup-id setbg
 # Starts dunst for notifications:
 exec --no-startup-id dunst
 # Composite manager:
-exec --no-startup-id xcompmgr
+exec --no-startup-id compton
 # Runs the key remapping scripts
 exec --no-startup-id remaps
 # Unclutter makes the mouse invisible after a brief period
@@ -60,6 +48,9 @@ exec --no-startup-id unclutter
 exec_always --no-startup-id mpdupdate
 # Podboat automatic queue and download
 exec_always --no-startup-id podentr
+# Configure touchpad to work
+exec --no-startup-id synclient TapButton1=1
+exec --no-startup-id synclient AccelFactor=0.2
 
 bar {
 	font pango:mono 10
@@ -294,6 +285,11 @@ bindsym $mod+Scroll_Lock	exec --no-startup-id "killall screenkey || screenkey"
 bindsym $mod+Delete		exec $stoprec
 bindsym XF86Launch1		exec --no-startup-id xset dpms force off
 
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
 # #---Extra XF86 Keys---# #
 # These are the extra media keys that some keyboards have.
 bindsym XF86AudioMute		exec --no-startup-id lmc mute
@@ -325,13 +321,13 @@ bindsym XF86MyComputer		exec $term -e $FILE
 ##bindsym XF86Back		exec
 ##bindsym XF86Forward		exec
 bindsym XF86Eject		exec --no-startup-id dmenuumount
-bindsym XF86AudioNext		exec --no-startup-id lmc next
-bindsym XF86AudioPlay		exec --no-startup-id lmc toggle
-bindsym XF86AudioPrev		exec --no-startup-id lmc prev
+#bindsym XF86AudioNext		exec --no-startup-id lmc next
+#bindsym XF86AudioPlay		exec --no-startup-id lmc toggle
+#bindsym XF86AudioPrev		exec --no-startup-id lmc prev
 bindsym XF86AudioStop		exec --no-startup-id lmc toggle
 ##bindsym XF86AudioRecord
-bindsym XF86AudioRewind		exec --no-startup-id lmc back 10
-bindsym XF86AudioForward	exec --no-startup-id lmc forward 10
+#bindsym XF86AudioRewind		exec --no-startup-id lmc back 10
+#bindsym XF86AudioForward	exec --no-startup-id lmc forward 10
 ##bindsym XF86Phone		exec
 ##bindsym XF86Tools		exec
 bindsym XF86HomePage		exec $BROWSER https://lukesmith.xyz
@@ -377,3 +373,4 @@ bindsym XF86Documents		exec $term -e $FILE ~/Documents
 ##bindsym XF86Battery		exec
 ##bindsym XF86Bluetooth		exec
 bindsym XF86WLAN		exec $netrefresh
+exec_always --no-startup-id notify-send -i ~/.scripts/pix/larbs.png '<b>Welcome to LARBS:</b> Press Super+F1 for the manual.' -t 10000
