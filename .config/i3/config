@@ -51,11 +51,7 @@ exec_always --no-startup-id podentr
 # Configure touchpad to work
 exec --no-startup-id synclient TapButton1=1
 exec --no-startup-id synclient AccelFactor=0.2
-<<<<<<< HEAD
 exec --no-startup-id xrandr --output eDP-1 --brightness 0.66
-=======
-
->>>>>>> 47985c6dc2f1b965bc8710381ad5d8877785676f
 bar {
 	font pango:mono 10
 	status_command i3blocks
