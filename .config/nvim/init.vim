@@ -10,6 +10,7 @@ Plug 'LukeSmithxyz/vimling'
 Plug 'vimwiki/vimwiki'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-commentary'
+Plug 'lervag/vimtex'
 call plug#end()
 
 set bg=light
