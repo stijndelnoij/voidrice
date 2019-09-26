@@ -1,16 +1,4 @@
 # vim: filetype=i3
-#  _        _    ____  ____ ____
-# | |      / \  |  _ \| __ ) ___|
-# | |     / _ \ | |_) |  _ \___ \
-# | |___ / ___ \|  _ <| |_) |__) |
-# |_____/_/   \_\_| \_\____/____/
-#
-# File originally by Luke Smith
-# Website: http://lukesmith.xyz
-# Email: luke@lukesmith.xyz
-# YouTube: https://youtube.com/c/LukeSmithxyz
-# Github: https://github.com/LukeSmithxyz
-
 # This config file will use environmental variables such as $BROWSER and $TERMINAL.
 # You can set these variables in ~/.profile or ~/.bash_profile if you have it as below:
 #
@@ -63,7 +51,11 @@ exec_always --no-startup-id podentr
 # Configure touchpad to work
 exec --no-startup-id synclient TapButton1=1
 exec --no-startup-id synclient AccelFactor=0.2
+<<<<<<< HEAD
 exec --no-startup-id xrandr --output eDP-1 --brightness 0.66
+=======
+
+>>>>>>> 47985c6dc2f1b965bc8710381ad5d8877785676f
 bar {
 	font pango:mono 10
 	status_command i3blocks
